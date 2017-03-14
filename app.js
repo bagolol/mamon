@@ -20,14 +20,3 @@ var calculateSum = function(values, token) {
   });
   answer(sum, token);
 };
-
-var answer = function(sum, token) {
-  var url = challengeUrl + '/' + token + '/' + sum;
-  request(url, function(error, response, body) {
-     if (!error && response.statusCode == 200) {
-      var result = response.body.toString();
-      result = JSON.parse(result);
-      console.log(result.answer);
-    };
-  });
-};
